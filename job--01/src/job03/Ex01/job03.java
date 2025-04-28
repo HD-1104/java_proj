@@ -1,0 +1,61 @@
+package job03.Ex01;
+//클래스 밖 : 1. 패키지 , 2. import , 3. 외부 클래스
+class Person {
+	// 필드 : 클래스 블락에 변수를 필드 , 지역 변수 : 메소들 블락에 존재하는 변수를 지역변수
+	String name;
+	int age;
+	double weight;
+	
+	//  생성자 : 클래스 이름과 동일한 이름의 메소드 , 리턴이 없다.
+	// 기본 생성자 : 생략 되어 있다. , 객체 생성시 호출 , 객체의 초기값을 할당
+	Person(){};
+	Person(String name , int age , double weight){
+		this.name = name;
+		this.age = age;
+		this.weight = weight;
+	}
+	
+	// 메소드 : 클래스에 존재하는 함수(매소드) , 기능을 담고 있다. , 메소드 호출 : print()
+		/*
+		 	 리턴타입 매소드명(인풋 매개변수) {
+		 	 	실행 블락
+		 	 }
+		 */
+	// print() 메소드를 정의
+	void print () {
+		System.out.println("Persion객체의 print() 메소드 호출됨");
+	}
+	
+	// 나이를 리턴하는 매소드
+	int agtAge() {
+		return age;
+	}
+	// setAge(age) 인풋 받아서 메모리에 할당하는 메소드
+	void setAge (int age) {
+		this.age = age;
+	}
+}
+class Animal {
+	
+}
+class Car{
+	
+}
+public class job03 {
+	// 클래스 안 : 1. 필드 , 2. 매소드 , 3. 생성자
+	public static void main(String[] args) {
+		// 1. 객체 생성 : 클래스를 객체화
+		Person person = new Person();
+		
+		// 2. 객체의 필드의 값 추가
+		person.age=20;
+		person.name="홍길동";
+		person.weight = 74.33;
+		
+		//3. 객체의 메소드 호출
+		int age = person.agtAge();
+		
+		person.print();
+		System.out.println("나이는 : " + age );
+	}
+}
